@@ -66,18 +66,30 @@ clang -arch arm64 -arch x86_64 \
     $SOURCES \
     -o "$DIST_DIR/$GRAMMAR/$GRAMMAR.dylib"
 
-# Copy queries (check subpath first, then root for monorepos)
+# Copy queries (check multiple locations for monorepos)
+ROOT_DIR="$WORKDIR/${REPO}-${VERSION_STRIPPED}"
 QUERIES_DIR=""
+
 if [ -d "queries" ]; then
+    # Queries in subpath directory (e.g., tree-sitter-markdown/queries/)
     QUERIES_DIR="queries"
-elif [ -n "$SUBPATH" ] && [ -d "$WORKDIR/${REPO}-${VERSION_STRIPPED}/queries" ]; then
-    # For monorepos, queries may be at root level
-    QUERIES_DIR="$WORKDIR/${REPO}-${VERSION_STRIPPED}/queries"
+elif [ -n "$SUBPATH" ] && [ -d "$ROOT_DIR/queries/$GRAMMAR" ]; then
+    # Queries at root in grammar-named subdirectory (e.g., queries/xml/)
+    QUERIES_DIR="$ROOT_DIR/queries/$GRAMMAR"
+elif [ -n "$SUBPATH" ] && [ -d "$ROOT_DIR/queries" ]; then
+    # Queries at root level (e.g., TypeScript uses shared queries)
+    QUERIES_DIR="$ROOT_DIR/queries"
 fi
 
 if [ -n "$QUERIES_DIR" ]; then
     echo "  Copying queries from $QUERIES_DIR..."
-    cp -r "$QUERIES_DIR" "$DIST_DIR/$GRAMMAR/"
+    mkdir -p "$DIST_DIR/$GRAMMAR/queries"
+    # Copy contents directly into queries/ directory
+    if [ -f "$QUERIES_DIR/highlights.scm" ]; then
+        cp "$QUERIES_DIR"/*.scm "$DIST_DIR/$GRAMMAR/queries/"
+    else
+        cp -r "$QUERIES_DIR"/* "$DIST_DIR/$GRAMMAR/queries/" 2>/dev/null || cp -r "$QUERIES_DIR" "$DIST_DIR/$GRAMMAR/"
+    fi
 else
     echo "  Warning: No queries directory found"
 fi
