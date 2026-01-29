@@ -48,21 +48,35 @@ jobs:
           echo "=== Release artifacts ==="
           ls -la dist/*.tar.gz dist/manifest.json 2>/dev/null || echo "No artifacts found"
 
+      - name: Check if release should be created
+        id: should_release
+        if: github.ref == 'refs/heads/main'
+        run: |
+          COMMIT_MSG="${{ github.event.head_commit.message }}"
+          if [[ "$COMMIT_MSG" == feat:* ]] || [[ "$COMMIT_MSG" == feat\(*\):* ]] || \
+             [[ "$COMMIT_MSG" == fix:* ]] || [[ "$COMMIT_MSG" == fix\(*\):* ]]; then
+            echo "should_release=true" >> $GITHUB_OUTPUT
+            echo "Release triggered by: $COMMIT_MSG"
+          else
+            echo "should_release=false" >> $GITHUB_OUTPUT
+            echo "No release for: $COMMIT_MSG"
+          fi
+
       - name: Generate version
         id: version
-        if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/')
+        if: steps.should_release.outputs.should_release == 'true' || startsWith(github.ref, 'refs/tags/')
         run: |
           if [[ "${{ github.ref }}" == refs/tags/* ]]; then
             VERSION="${{ github.ref_name }}"
           else
-            # Auto-version for main branch: v1.0.YYYYMMDD.HHMMSS
-            VERSION="v1.0.$(date -u +%Y%m%d.%H%M%S)"
+            BASE_VERSION=$(cat version.txt | tr -d '\n')
+            VERSION="v${BASE_VERSION}.${GITHUB_RUN_NUMBER}"
           fi
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Generated version: $VERSION"
 
       - name: Create Release
-        if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/')
+        if: steps.should_release.outputs.should_release == 'true' || startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.version }}

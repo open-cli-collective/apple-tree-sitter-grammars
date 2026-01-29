@@ -67,22 +67,39 @@ This repository builds and distributes precompiled tree-sitter grammars as unive
 
 ## CI/CD
 
-- **Trigger**: Tag push (`v*`) or manual dispatch
+- **PR**: Build and validate, upload artifacts (no release)
+- **Push to main**: Build, create release only for `feat:` and `fix:` commits
+- **Tag push**: Build and create release with tag version
+- **workflow_dispatch**: Build and upload artifacts for testing
 - **Runner**: `macos-14` (Apple Silicon, can build universal)
 - **Output**: GitHub release with `<grammar>.tar.gz` files and `manifest.json`
 
 ## Versioning
 
-- Base version in release tags (e.g., `v1.0.0`)
-- Individual grammar versions tracked in `grammars.json`
-- Manifest includes all version info for consumers
+Release versions follow the pattern: `v{MAJOR}.{MINOR}.{PATCH}`
+
+- **version.txt**: Contains `MAJOR.MINOR` (e.g., `1.0`)
+- **Full version**: `v${version.txt}.${GITHUB_RUN_NUMBER}` (e.g., `v1.0.42`)
+- **Individual grammars**: Versions tracked in `grammars.json`
+
+### When to Update version.txt
+
+| Change Type | Action | Example |
+|-------------|--------|---------|
+| New grammar | No change | `feat: add rust grammar` → `v1.0.43` |
+| Bug fix | No change | `fix: correct python queries` → `v1.0.44` |
+| Minor improvement | Bump MINOR | `1.0` → `1.1` |
+| Breaking change | Bump MAJOR | `1.1` → `2.0` |
+
+The PATCH version auto-increments via `GITHUB_RUN_NUMBER`. Only update `version.txt` manually when bumping MAJOR or MINOR.
 
 ## Commit Convention
 
 Use conventional commits:
-- `feat:` - New grammars or features
-- `fix:` - Bug fixes
-- `chore:` - Maintenance tasks
-- `docs:` - Documentation only
+- `feat:` - New grammars or features (triggers release)
+- `fix:` - Bug fixes (triggers release)
+- `chore:` - Maintenance tasks (no release)
+- `docs:` - Documentation only (no release)
+- `ci:` - CI/CD changes (no release)
 
 **Note:** Do not include AI attribution (e.g., "Co-Authored-By: Claude" or "Generated with Claude") in commits or PR descriptions for this repository.
