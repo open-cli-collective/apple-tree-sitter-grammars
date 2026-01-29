@@ -201,6 +201,43 @@
       "version": "v0.23.1",
       "license": "MIT",
       "aliases": ["csharp", "cs"]
+    },
+    {
+      "name": "ruby",
+      "displayName": "Ruby",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-ruby",
+      "version": "v0.23.1",
+      "license": "MIT",
+      "aliases": ["rb"]
+    },
+    {
+      "name": "php",
+      "displayName": "PHP",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-php",
+      "version": "v0.24.2",
+      "license": "MIT",
+      "subpath": "php",
+      "aliases": []
+    },
+    {
+      "name": "lua",
+      "displayName": "Lua",
+      "org": "tree-sitter-grammars",
+      "repo": "tree-sitter-lua",
+      "version": "v0.4.1",
+      "license": "MIT",
+      "aliases": []
+    },
+    {
+      "name": "bash",
+      "displayName": "Bash",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-bash",
+      "version": "v0.25.1",
+      "license": "MIT",
+      "aliases": ["sh", "shell", "zsh"]
     }
   ]
 }
