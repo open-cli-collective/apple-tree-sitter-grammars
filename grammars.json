@@ -293,6 +293,42 @@
       "version": "v0.4.1",
       "license": "MIT",
       "aliases": ["lisp", "cl"]
+    },
+    {
+      "name": "swift",
+      "displayName": "Swift",
+      "org": "alex-pinkus",
+      "repo": "tree-sitter-swift",
+      "version": "0.7.1-with-generated-files",
+      "license": "MIT",
+      "aliases": []
+    },
+    {
+      "name": "r",
+      "displayName": "R",
+      "org": "r-lib",
+      "repo": "tree-sitter-r",
+      "version": "v1.2.0",
+      "license": "MIT",
+      "aliases": []
+    },
+    {
+      "name": "gdscript",
+      "displayName": "GDScript",
+      "org": "PrestonKnopp",
+      "repo": "tree-sitter-gdscript",
+      "version": "v6.0.0",
+      "license": "MIT",
+      "aliases": ["gd"]
+    },
+    {
+      "name": "diff",
+      "displayName": "Diff",
+      "org": "tree-sitter-grammars",
+      "repo": "tree-sitter-diff",
+      "version": "v0.1.0",
+      "license": "MIT",
+      "aliases": ["patch"]
     }
   ]
 }
