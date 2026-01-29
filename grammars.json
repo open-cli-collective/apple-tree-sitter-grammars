@@ -64,6 +64,62 @@
       "license": "MIT",
       "subpath": "tsx",
       "aliases": []
+    },
+    {
+      "name": "yaml",
+      "displayName": "YAML",
+      "org": "tree-sitter-grammars",
+      "repo": "tree-sitter-yaml",
+      "version": "v0.7.2",
+      "license": "MIT",
+      "aliases": ["yml"]
+    },
+    {
+      "name": "xml",
+      "displayName": "XML",
+      "org": "tree-sitter-grammars",
+      "repo": "tree-sitter-xml",
+      "version": "v0.7.0",
+      "license": "MIT",
+      "subpath": "xml",
+      "aliases": []
+    },
+    {
+      "name": "markdown",
+      "displayName": "Markdown",
+      "org": "tree-sitter-grammars",
+      "repo": "tree-sitter-markdown",
+      "version": "v0.5.2",
+      "license": "MIT",
+      "subpath": "tree-sitter-markdown",
+      "aliases": ["md"]
+    },
+    {
+      "name": "dockerfile",
+      "displayName": "Dockerfile",
+      "org": "camdencheek",
+      "repo": "tree-sitter-dockerfile",
+      "version": "v0.2.0",
+      "license": "MIT",
+      "aliases": []
+    },
+    {
+      "name": "hcl",
+      "displayName": "HCL",
+      "org": "tree-sitter-grammars",
+      "repo": "tree-sitter-hcl",
+      "version": "v1.2.0",
+      "license": "Apache-2.0",
+      "aliases": ["terraform", "tf"]
+    },
+    {
+      "name": "make",
+      "displayName": "Makefile",
+      "org": "tree-sitter-grammars",
+      "repo": "tree-sitter-make",
+      "version": "v1.1.1",
+      "license": "MIT",
+      "aliases": ["makefile"]
     }
   ]
 }
