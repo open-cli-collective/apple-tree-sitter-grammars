@@ -120,6 +120,51 @@
       "version": "v1.1.1",
       "license": "MIT",
       "aliases": ["makefile"]
+    },
+    {
+      "name": "c",
+      "displayName": "C",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-c",
+      "version": "v0.24.1",
+      "license": "MIT",
+      "aliases": []
+    },
+    {
+      "name": "cpp",
+      "displayName": "C++",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-cpp",
+      "version": "v0.23.4",
+      "license": "MIT",
+      "aliases": ["cc", "cxx"]
+    },
+    {
+      "name": "rust",
+      "displayName": "Rust",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-rust",
+      "version": "v0.24.0",
+      "license": "MIT",
+      "aliases": ["rs"]
+    },
+    {
+      "name": "go",
+      "displayName": "Go",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-go",
+      "version": "v0.25.0",
+      "license": "MIT",
+      "aliases": ["golang"]
+    },
+    {
+      "name": "zig",
+      "displayName": "Zig",
+      "org": "tree-sitter-grammars",
+      "repo": "tree-sitter-zig",
+      "version": "v1.1.2",
+      "license": "MIT",
+      "aliases": []
     }
   ]
 }
