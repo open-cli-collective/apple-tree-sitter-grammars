@@ -238,6 +238,61 @@
       "version": "v0.25.1",
       "license": "MIT",
       "aliases": ["sh", "shell", "zsh"]
+    },
+    {
+      "name": "haskell",
+      "displayName": "Haskell",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-haskell",
+      "version": "v0.23.1",
+      "license": "MIT",
+      "aliases": ["hs"]
+    },
+    {
+      "name": "ocaml",
+      "displayName": "OCaml",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-ocaml",
+      "version": "v0.24.2",
+      "license": "MIT",
+      "subpath": "grammars/ocaml",
+      "aliases": ["ml"]
+    },
+    {
+      "name": "elixir",
+      "displayName": "Elixir",
+      "org": "elixir-lang",
+      "repo": "tree-sitter-elixir",
+      "version": "v0.3.4",
+      "license": "Apache-2.0",
+      "aliases": ["ex", "exs"]
+    },
+    {
+      "name": "erlang",
+      "displayName": "Erlang",
+      "org": "WhatsApp",
+      "repo": "tree-sitter-erlang",
+      "version": "0.1.0",
+      "license": "Apache-2.0",
+      "aliases": ["erl"]
+    },
+    {
+      "name": "gleam",
+      "displayName": "Gleam",
+      "org": "gleam-lang",
+      "repo": "tree-sitter-gleam",
+      "version": "v1.1.0",
+      "license": "Apache-2.0",
+      "aliases": []
+    },
+    {
+      "name": "commonlisp",
+      "displayName": "Common Lisp",
+      "org": "tree-sitter-grammars",
+      "repo": "tree-sitter-commonlisp",
+      "version": "v0.4.1",
+      "license": "MIT",
+      "aliases": ["lisp", "cl"]
     }
   ]
 }

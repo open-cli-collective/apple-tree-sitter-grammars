@@ -60,10 +60,47 @@ This repository builds and distributes precompiled tree-sitter grammars as unive
 ## Grammar Requirements
 
 - Must have `src/parser.c` (generated parser)
-- May have `src/scanner.c` (custom scanner)
-- Must have `queries/highlights.scm`
+- May have `src/scanner.c` or `src/scanner.cc` (custom scanner, C or C++)
+- Should have `queries/highlights.scm` (some grammars like HCL and Kotlin lack these)
 - Must have permissive license (MIT, Apache-2.0, BSD, CC0)
 - AGPL, GPL, and other copyleft licenses are NOT acceptable
+
+## Grammar Variations
+
+Not all grammars follow the same structure. Common variations:
+
+### Monorepo Grammars
+Some repos contain multiple parsers. Use the `subpath` field:
+```json
+{
+  "name": "typescript",
+  "subpath": "typescript",  // Parser is in typescript/ subdirectory
+  ...
+}
+```
+Examples: TypeScript/TSX, PHP, OCaml, XML, Markdown
+
+### Query Directory Locations
+Queries can be in different places depending on repo structure:
+- **Standard**: `queries/highlights.scm` at repo root
+- **In subpath**: `<subpath>/queries/highlights.scm` (Markdown)
+- **At root for monorepos**: `queries/` at root even when using subpath (TypeScript, PHP)
+- **Grammar-named subdirectory**: `queries/<grammar>/highlights.scm` (XML has `queries/xml/`)
+
+The build script checks all these locations automatically.
+
+### Non-standard Tag Names
+Most repos use `v1.0.0` format, but some don't:
+- WhatsApp/tree-sitter-erlang uses `0.1.0` (no `v` prefix)
+
+Always verify the actual tag format on GitHub before adding a grammar.
+
+### Missing Highlight Queries
+Some grammars don't have highlight queries:
+- HCL (tree-sitter-grammars/tree-sitter-hcl)
+- Kotlin (tree-sitter-grammars/tree-sitter-kotlin)
+
+These grammars will build successfully but won't provide syntax highlighting until queries are added upstream or we provide our own.
 
 ## CI/CD
 
