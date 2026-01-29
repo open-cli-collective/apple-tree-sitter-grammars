@@ -8,6 +8,15 @@
       "version": "v0.23.1",
       "license": "MIT",
       "aliases": ["js", "jsx", "mjs", "cjs"]
+    },
+    {
+      "name": "python",
+      "displayName": "Python",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-python",
+      "version": "v0.23.6",
+      "license": "MIT",
+      "aliases": ["py"]
     }
   ]
 }
