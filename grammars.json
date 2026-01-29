@@ -165,6 +165,42 @@
       "version": "v1.1.2",
       "license": "MIT",
       "aliases": []
+    },
+    {
+      "name": "java",
+      "displayName": "Java",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-java",
+      "version": "v0.23.5",
+      "license": "MIT",
+      "aliases": []
+    },
+    {
+      "name": "kotlin",
+      "displayName": "Kotlin",
+      "org": "tree-sitter-grammars",
+      "repo": "tree-sitter-kotlin",
+      "version": "v1.1.0",
+      "license": "MIT",
+      "aliases": ["kt"]
+    },
+    {
+      "name": "scala",
+      "displayName": "Scala",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-scala",
+      "version": "v0.24.0",
+      "license": "MIT",
+      "aliases": []
+    },
+    {
+      "name": "c_sharp",
+      "displayName": "C#",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-c-sharp",
+      "version": "v0.23.1",
+      "license": "MIT",
+      "aliases": ["csharp", "cs"]
     }
   ]
 }
