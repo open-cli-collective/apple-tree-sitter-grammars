@@ -1,0 +1,64 @@
+name: Build Grammars
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14  # Apple Silicon runner (can build universal)
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          brew install jq
+
+      - name: Make scripts executable
+        run: chmod +x scripts/*.sh
+
+      - name: Build all grammars
+        run: ./scripts/build-all.sh
+
+      - name: Generate manifest
+        run: ./scripts/generate-manifest.sh
+
+      - name: Package release artifacts
+        run: |
+          cd dist
+          for grammar_dir in */; do
+            name="${grammar_dir%/}"
+            if [ -f "${name}/${name}.dylib" ]; then
+              echo "Packaging $name..."
+              tar -czvf "${name}.tar.gz" -C "${name}" .
+            fi
+          done
+
+      - name: List artifacts
+        run: |
+          echo "=== Release artifacts ==="
+          ls -la dist/*.tar.gz dist/manifest.json 2>/dev/null || echo "No artifacts found"
+
+      - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/*.tar.gz
+            dist/manifest.json
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifacts (for workflow_dispatch)
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: grammars
+          path: |
+            dist/*.tar.gz
+            dist/manifest.json
