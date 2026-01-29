@@ -24,17 +24,18 @@ fi
 # Get number of grammars
 GRAMMAR_COUNT=$(jq '.grammars | length' "$GRAMMARS_JSON")
 
+# Clean and create dist directory
+rm -rf "${ROOT_DIR}/dist"
+mkdir -p "${ROOT_DIR}/dist"
+
 if [ "$GRAMMAR_COUNT" -eq 0 ]; then
     echo "No grammars defined in grammars.json"
+    echo "dist directory created (empty)"
     exit 0
 fi
 
 echo "Building $GRAMMAR_COUNT grammars..."
 echo ""
-
-# Clean dist directory
-rm -rf "${ROOT_DIR}/dist"
-mkdir -p "${ROOT_DIR}/dist"
 
 # Track success/failure
 BUILT=0
