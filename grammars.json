@@ -17,6 +17,53 @@
       "version": "v0.23.6",
       "license": "MIT",
       "aliases": ["py"]
+    },
+    {
+      "name": "html",
+      "displayName": "HTML",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-html",
+      "version": "v0.23.2",
+      "license": "MIT",
+      "aliases": ["htm"]
+    },
+    {
+      "name": "css",
+      "displayName": "CSS",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-css",
+      "version": "v0.25.0",
+      "license": "MIT",
+      "aliases": []
+    },
+    {
+      "name": "json",
+      "displayName": "JSON",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-json",
+      "version": "v0.24.8",
+      "license": "MIT",
+      "aliases": []
+    },
+    {
+      "name": "typescript",
+      "displayName": "TypeScript",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-typescript",
+      "version": "v0.23.2",
+      "license": "MIT",
+      "subpath": "typescript",
+      "aliases": ["ts"]
+    },
+    {
+      "name": "tsx",
+      "displayName": "TSX",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-typescript",
+      "version": "v0.23.2",
+      "license": "MIT",
+      "subpath": "tsx",
+      "aliases": []
     }
   ]
 }
