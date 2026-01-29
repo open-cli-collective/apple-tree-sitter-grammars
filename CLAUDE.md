@@ -92,8 +92,13 @@ The build script checks all these locations automatically.
 ### Non-standard Tag Names
 Most repos use `v1.0.0` format, but some don't:
 - WhatsApp/tree-sitter-erlang uses `0.1.0` (no `v` prefix)
+- alex-pinkus/tree-sitter-swift uses `0.7.1-with-generated-files` (needs generated parser.c)
 
 Always verify the actual tag format on GitHub before adding a grammar.
+
+### Repos Without Generated Parser
+Some repos don't include `parser.c` in releases - you need to generate it with `tree-sitter generate`. Look for tags with `-with-generated-files` suffix:
+- alex-pinkus/tree-sitter-swift provides separate tags with pre-generated files
 
 ### Missing Highlight Queries
 Some grammars don't have highlight queries:

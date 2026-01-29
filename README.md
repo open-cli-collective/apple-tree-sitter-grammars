@@ -34,47 +34,46 @@ TSLanguage* (*tree_sitter_javascript)(void) = dlsym(handle, "tree_sitter_javascr
 TSLanguage* lang = tree_sitter_javascript();
 ```
 
-## Supported Languages
+## Supported Languages (36)
 
-### Tier 1: Verified & Ready (35 languages)
-
-| Language | Repo | Version | License |
-|----------|------|---------|---------|
-| JavaScript | tree-sitter/tree-sitter-javascript | v0.25.0 | MIT |
-| TypeScript | tree-sitter/tree-sitter-typescript | v0.23.2 | MIT |
-| Python | tree-sitter/tree-sitter-python | v0.25.0 | MIT |
-| HTML | tree-sitter/tree-sitter-html | v0.23.2 | MIT |
-| CSS | tree-sitter/tree-sitter-css | v0.25.0 | MIT |
-| JSON | tree-sitter/tree-sitter-json | v0.24.8 | MIT |
-| YAML | tree-sitter-grammars/tree-sitter-yaml | v0.7.2 | MIT |
-| XML | tree-sitter-grammars/tree-sitter-xml | v0.7.0 | MIT |
-| Bash | tree-sitter/tree-sitter-bash | v0.25.1 | MIT |
-| Markdown | tree-sitter-grammars/tree-sitter-markdown | v0.5.2 | MIT |
-| Java | tree-sitter/tree-sitter-java | v0.23.5 | MIT |
-| C# | tree-sitter/tree-sitter-c-sharp | v0.23.1 | MIT |
-| C++ | tree-sitter/tree-sitter-cpp | v0.23.4 | MIT |
-| C | tree-sitter/tree-sitter-c | v0.24.1 | MIT |
-| Go | tree-sitter/tree-sitter-go | v0.25.0 | MIT |
-| Rust | tree-sitter/tree-sitter-rust | v0.24.0 | MIT |
-| PHP | tree-sitter/tree-sitter-php | v0.24.2 | MIT |
-| Ruby | tree-sitter/tree-sitter-ruby | v0.23.1 | MIT |
-| Kotlin | tree-sitter-grammars/tree-sitter-kotlin | v1.1.0 | MIT |
-| Lua | tree-sitter-grammars/tree-sitter-lua | v0.4.1 | MIT |
-| Scala | tree-sitter/tree-sitter-scala | v0.24.0 | MIT |
-| Swift | alex-pinkus/tree-sitter-swift | v0.7.0 | MIT |
-| R | r-lib/tree-sitter-r | v1.2.0 | MIT |
-| Elixir | elixir-lang/tree-sitter-elixir | v0.3.4 | Apache-2.0 |
-| Erlang | WhatsApp/tree-sitter-erlang | v0.1.0 | Apache-2.0 |
-| OCaml | tree-sitter/tree-sitter-ocaml | v0.24.2 | MIT |
-| Haskell | tree-sitter/tree-sitter-haskell | v0.23.1 | MIT |
-| Zig | tree-sitter-grammars/tree-sitter-zig | v1.1.2 | MIT |
-| Gleam | gleam-lang/tree-sitter-gleam | v1.1.0 | Apache-2.0 |
-| GDScript | PrestonKnopp/tree-sitter-gdscript | v6.0.0 | MIT |
-| Dockerfile | camdencheek/tree-sitter-dockerfile | v0.2.0 | MIT |
-| HCL | tree-sitter-grammars/tree-sitter-hcl | v1.2.0 | Apache-2.0 |
-| Makefile | tree-sitter-grammars/tree-sitter-make | v1.1.1 | MIT |
-| Diff | tree-sitter-grammars/tree-sitter-diff | v0.1.0 | MIT |
-| Common Lisp | tree-sitter-grammars/tree-sitter-commonlisp | v0.4.1 | MIT |
+| Language | Repo | Version | License | Aliases |
+|----------|------|---------|---------|---------|
+| JavaScript | tree-sitter/tree-sitter-javascript | v0.23.1 | MIT | js, jsx, mjs, cjs |
+| Python | tree-sitter/tree-sitter-python | v0.23.6 | MIT | py |
+| HTML | tree-sitter/tree-sitter-html | v0.23.2 | MIT | htm |
+| CSS | tree-sitter/tree-sitter-css | v0.25.0 | MIT | |
+| JSON | tree-sitter/tree-sitter-json | v0.24.8 | MIT | |
+| TypeScript | tree-sitter/tree-sitter-typescript | v0.23.2 | MIT | ts |
+| TSX | tree-sitter/tree-sitter-typescript | v0.23.2 | MIT | |
+| YAML | tree-sitter-grammars/tree-sitter-yaml | v0.7.2 | MIT | yml |
+| XML | tree-sitter-grammars/tree-sitter-xml | v0.7.0 | MIT | |
+| Markdown | tree-sitter-grammars/tree-sitter-markdown | v0.5.2 | MIT | md |
+| Dockerfile | camdencheek/tree-sitter-dockerfile | v0.2.0 | MIT | |
+| HCL | tree-sitter-grammars/tree-sitter-hcl | v1.2.0 | Apache-2.0 | terraform, tf |
+| Makefile | tree-sitter-grammars/tree-sitter-make | v1.1.1 | MIT | make |
+| C | tree-sitter/tree-sitter-c | v0.24.1 | MIT | |
+| C++ | tree-sitter/tree-sitter-cpp | v0.23.4 | MIT | cc, cxx |
+| Rust | tree-sitter/tree-sitter-rust | v0.24.0 | MIT | rs |
+| Go | tree-sitter/tree-sitter-go | v0.25.0 | MIT | golang |
+| Zig | tree-sitter-grammars/tree-sitter-zig | v1.1.2 | MIT | |
+| Java | tree-sitter/tree-sitter-java | v0.23.5 | MIT | |
+| Kotlin | tree-sitter-grammars/tree-sitter-kotlin | v1.1.0 | MIT | kt |
+| Scala | tree-sitter/tree-sitter-scala | v0.24.0 | MIT | |
+| C# | tree-sitter/tree-sitter-c-sharp | v0.23.1 | MIT | csharp, cs |
+| Ruby | tree-sitter/tree-sitter-ruby | v0.23.1 | MIT | rb |
+| PHP | tree-sitter/tree-sitter-php | v0.24.2 | MIT | |
+| Lua | tree-sitter-grammars/tree-sitter-lua | v0.4.1 | MIT | |
+| Bash | tree-sitter/tree-sitter-bash | v0.25.1 | MIT | sh, shell, zsh |
+| Haskell | tree-sitter/tree-sitter-haskell | v0.23.1 | MIT | hs |
+| OCaml | tree-sitter/tree-sitter-ocaml | v0.24.2 | MIT | ml |
+| Elixir | elixir-lang/tree-sitter-elixir | v0.3.4 | Apache-2.0 | ex, exs |
+| Erlang | WhatsApp/tree-sitter-erlang | 0.1.0 | Apache-2.0 | erl |
+| Gleam | gleam-lang/tree-sitter-gleam | v1.1.0 | Apache-2.0 | |
+| Common Lisp | tree-sitter-grammars/tree-sitter-commonlisp | v0.4.1 | MIT | lisp, cl |
+| Swift | alex-pinkus/tree-sitter-swift | 0.7.1 | MIT | |
+| R | r-lib/tree-sitter-r | v1.2.0 | MIT | |
+| GDScript | PrestonKnopp/tree-sitter-gdscript | v6.0.0 | MIT | gd |
+| Diff | tree-sitter-grammars/tree-sitter-diff | v0.1.0 | MIT | patch |
 
 ## Building Locally
 
