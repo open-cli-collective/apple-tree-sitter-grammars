@@ -66,10 +66,18 @@ clang -arch arm64 -arch x86_64 \
     $SOURCES \
     -o "$DIST_DIR/$GRAMMAR/$GRAMMAR.dylib"
 
-# Copy queries
+# Copy queries (check subpath first, then root for monorepos)
+QUERIES_DIR=""
 if [ -d "queries" ]; then
-    echo "  Copying queries..."
-    cp -r queries "$DIST_DIR/$GRAMMAR/"
+    QUERIES_DIR="queries"
+elif [ -n "$SUBPATH" ] && [ -d "$WORKDIR/${REPO}-${VERSION_STRIPPED}/queries" ]; then
+    # For monorepos, queries may be at root level
+    QUERIES_DIR="$WORKDIR/${REPO}-${VERSION_STRIPPED}/queries"
+fi
+
+if [ -n "$QUERIES_DIR" ]; then
+    echo "  Copying queries from $QUERIES_DIR..."
+    cp -r "$QUERIES_DIR" "$DIST_DIR/$GRAMMAR/"
 else
     echo "  Warning: No queries directory found"
 fi
