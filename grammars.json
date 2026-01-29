@@ -1,3 +1,13 @@
 {
-  "grammars": []
+  "grammars": [
+    {
+      "name": "javascript",
+      "displayName": "JavaScript",
+      "org": "tree-sitter",
+      "repo": "tree-sitter-javascript",
+      "version": "v0.23.1",
+      "license": "MIT",
+      "aliases": ["js", "jsx", "mjs", "cjs"]
+    }
+  ]
 }
