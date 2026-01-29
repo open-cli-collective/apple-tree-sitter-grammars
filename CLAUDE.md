@@ -84,3 +84,5 @@ Use conventional commits:
 - `fix:` - Bug fixes
 - `chore:` - Maintenance tasks
 - `docs:` - Documentation only
+
+**Note:** Do not include AI attribution (e.g., "Co-Authored-By: Claude" or "Generated with Claude") in commits or PR descriptions for this repository.
