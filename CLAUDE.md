@@ -134,6 +134,7 @@ When `requiresGeneration: true`:
 Some grammars don't have highlight queries:
 - HCL (tree-sitter-grammars/tree-sitter-hcl)
 - Kotlin (tree-sitter-grammars/tree-sitter-kotlin)
+- LaTeX (latex-lsp/tree-sitter-latex) - queries maintained separately in nvim-treesitter
 
 These grammars will build successfully but won't provide syntax highlighting until queries are added upstream or we provide our own.
 

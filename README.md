@@ -34,7 +34,7 @@ TSLanguage* (*tree_sitter_javascript)(void) = dlsym(handle, "tree_sitter_javascr
 TSLanguage* lang = tree_sitter_javascript();
 ```
 
-## Supported Languages (41)
+## Supported Languages (42)
 
 | Language | Repo | Version | License | Aliases |
 |----------|------|---------|---------|---------|
@@ -61,6 +61,7 @@ TSLanguage* lang = tree_sitter_javascript();
 | JavaScript | tree-sitter/tree-sitter-javascript | v0.23.1 | MIT | js, jsx, mjs, cjs |
 | JSON | tree-sitter/tree-sitter-json | v0.24.8 | MIT | |
 | Kotlin | tree-sitter-grammars/tree-sitter-kotlin | v1.1.0 | MIT | kt |
+| LaTeX | latex-lsp/tree-sitter-latex | v0.6.0 | MIT | tex |
 | Lua | tree-sitter-grammars/tree-sitter-lua | v0.4.1 | MIT | |
 | Makefile | tree-sitter-grammars/tree-sitter-make | v1.1.1 | MIT | make |
 | Markdown | tree-sitter-grammars/tree-sitter-markdown | v0.5.2 | MIT | md |
