@@ -48,10 +48,11 @@ for i in $(seq 0 $((GRAMMAR_COUNT - 1))); do
     REPO=$(jq -r ".grammars[$i].repo" "$GRAMMARS_JSON")
     VERSION=$(jq -r ".grammars[$i].version" "$GRAMMARS_JSON")
     SUBPATH=$(jq -r ".grammars[$i].subpath // empty" "$GRAMMARS_JSON")
+    REQUIRES_GEN=$(jq -r ".grammars[$i].requiresGeneration // false" "$GRAMMARS_JSON")
 
     echo "[$((i + 1))/$GRAMMAR_COUNT] $NAME"
 
-    if "${SCRIPT_DIR}/build-grammar.sh" "$NAME" "$ORG" "$REPO" "$VERSION" "$SUBPATH"; then
+    if "${SCRIPT_DIR}/build-grammar.sh" "$NAME" "$ORG" "$REPO" "$VERSION" "$SUBPATH" "$REQUIRES_GEN"; then
         BUILT=$((BUILT + 1))
     else
         echo "  ✗ Failed to build $NAME"

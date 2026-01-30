@@ -356,6 +356,16 @@
       "version": "v0.0.13",
       "license": "CC0-1.0",
       "aliases": ["clj", "cljs", "cljc", "bb"]
+    },
+    {
+      "name": "perl",
+      "displayName": "Perl",
+      "org": "tree-sitter-perl",
+      "repo": "tree-sitter-perl",
+      "version": "ad74e6db234c",
+      "license": "MIT",
+      "aliases": ["pl", "pm"],
+      "requiresGeneration": true
     }
   ]
 }
