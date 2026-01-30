@@ -65,7 +65,7 @@ jobs:
             name="${grammar_dir%/}"
             if [ -f "${name}/${name}.dylib" ]; then
               echo "Packaging $name..."
-              tar -czvf "${name}.tar.gz" -C "${name}" .
+              tar -czvf "${name}.tar.gz" "${name}"
             fi
           done
 
