@@ -386,6 +386,16 @@
       "license": "MIT",
       "aliases": ["tex"],
       "requiresGeneration": true
+    },
+    {
+      "name": "sql",
+      "displayName": "SQL",
+      "org": "DerekStride",
+      "repo": "tree-sitter-sql",
+      "version": "v0.3.11",
+      "license": "MIT",
+      "aliases": [],
+      "requiresGeneration": true
     }
   ]
 }
