@@ -347,6 +347,15 @@
       "version": "v0.5.1",
       "license": "MIT",
       "aliases": ["f90", "f95", "f03"]
+    },
+    {
+      "name": "clojure",
+      "displayName": "Clojure",
+      "org": "sogaiu",
+      "repo": "tree-sitter-clojure",
+      "version": "v0.0.13",
+      "license": "CC0-1.0",
+      "aliases": ["clj", "cljs", "cljc", "bb"]
     }
   ]
 }
