@@ -376,6 +376,16 @@
       "license": "MIT",
       "subpath": "fsharp",
       "aliases": ["fs"]
+    },
+    {
+      "name": "latex",
+      "displayName": "LaTeX",
+      "org": "latex-lsp",
+      "repo": "tree-sitter-latex",
+      "version": "v0.6.0",
+      "license": "MIT",
+      "aliases": ["tex"],
+      "requiresGeneration": true
     }
   ]
 }
