@@ -366,6 +366,16 @@
       "license": "MIT",
       "aliases": ["pl", "pm"],
       "requiresGeneration": true
+    },
+    {
+      "name": "fsharp",
+      "displayName": "F#",
+      "org": "ionide",
+      "repo": "tree-sitter-fsharp",
+      "version": "v0.1.0",
+      "license": "MIT",
+      "subpath": "fsharp",
+      "aliases": ["fs"]
     }
   ]
 }

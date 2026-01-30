@@ -34,7 +34,7 @@ TSLanguage* (*tree_sitter_javascript)(void) = dlsym(handle, "tree_sitter_javascr
 TSLanguage* lang = tree_sitter_javascript();
 ```
 
-## Supported Languages (40)
+## Supported Languages (41)
 
 | Language | Repo | Version | License | Aliases |
 |----------|------|---------|---------|---------|
@@ -50,6 +50,7 @@ TSLanguage* lang = tree_sitter_javascript();
 | Elixir | elixir-lang/tree-sitter-elixir | v0.3.4 | Apache-2.0 | ex, exs |
 | Erlang | WhatsApp/tree-sitter-erlang | 0.1.0 | Apache-2.0 | erl |
 | Fortran | stadelmanma/tree-sitter-fortran | v0.5.1 | MIT | f90, f95, f03 |
+| F# | ionide/tree-sitter-fsharp | v0.1.0 | MIT | fs |
 | GDScript | PrestonKnopp/tree-sitter-gdscript | v6.0.0 | MIT | gd |
 | Gleam | gleam-lang/tree-sitter-gleam | v1.1.0 | Apache-2.0 | |
 | Go | tree-sitter/tree-sitter-go | v0.25.0 | MIT | golang |
