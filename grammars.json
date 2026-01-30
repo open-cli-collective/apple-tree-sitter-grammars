@@ -405,6 +405,15 @@
       "version": "v0.10.2",
       "license": "MIT",
       "aliases": ["pas", "delphi"]
+    },
+    {
+      "name": "ada",
+      "displayName": "Ada",
+      "org": "briot",
+      "repo": "tree-sitter-ada",
+      "version": "6b58259a08b1",
+      "license": "MIT",
+      "aliases": ["adb", "ads"]
     }
   ]
 }

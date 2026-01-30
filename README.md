@@ -34,10 +34,11 @@ TSLanguage* (*tree_sitter_javascript)(void) = dlsym(handle, "tree_sitter_javascr
 TSLanguage* lang = tree_sitter_javascript();
 ```
 
-## Supported Languages (44)
+## Supported Languages (45)
 
 | Language | Repo | Version | License | Aliases |
 |----------|------|---------|---------|---------|
+| Ada | briot/tree-sitter-ada | 6b58259a | MIT | adb, ads |
 | Bash | tree-sitter/tree-sitter-bash | v0.25.1 | MIT | sh, shell, zsh |
 | C | tree-sitter/tree-sitter-c | v0.24.1 | MIT | |
 | C# | tree-sitter/tree-sitter-c-sharp | v0.23.1 | MIT | csharp, cs |
