@@ -34,7 +34,7 @@ TSLanguage* (*tree_sitter_javascript)(void) = dlsym(handle, "tree_sitter_javascr
 TSLanguage* lang = tree_sitter_javascript();
 ```
 
-## Supported Languages (42)
+## Supported Languages (43)
 
 | Language | Repo | Version | License | Aliases |
 |----------|------|---------|---------|---------|
@@ -73,6 +73,7 @@ TSLanguage* lang = tree_sitter_javascript();
 | Ruby | tree-sitter/tree-sitter-ruby | v0.23.1 | MIT | rb |
 | Rust | tree-sitter/tree-sitter-rust | v0.24.0 | MIT | rs |
 | Scala | tree-sitter/tree-sitter-scala | v0.24.0 | MIT | |
+| SQL | DerekStride/tree-sitter-sql | v0.3.11 | MIT | |
 | Swift | alex-pinkus/tree-sitter-swift | 0.7.1 | MIT | |
 | TOML | tree-sitter-grammars/tree-sitter-toml | v0.7.0 | MIT | |
 | TSX | tree-sitter/tree-sitter-typescript | v0.23.2 | MIT | |
