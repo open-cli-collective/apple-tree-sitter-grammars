@@ -329,6 +329,15 @@
       "version": "v0.1.0",
       "license": "MIT",
       "aliases": ["patch"]
+    },
+    {
+      "name": "toml",
+      "displayName": "TOML",
+      "org": "tree-sitter-grammars",
+      "repo": "tree-sitter-toml",
+      "version": "v0.7.0",
+      "license": "MIT",
+      "aliases": []
     }
   ]
 }
