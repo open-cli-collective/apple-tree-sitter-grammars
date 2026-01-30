@@ -338,6 +338,15 @@
       "version": "v0.7.0",
       "license": "MIT",
       "aliases": []
+    },
+    {
+      "name": "fortran",
+      "displayName": "Fortran",
+      "org": "stadelmanma",
+      "repo": "tree-sitter-fortran",
+      "version": "v0.5.1",
+      "license": "MIT",
+      "aliases": ["f90", "f95", "f03"]
     }
   ]
 }
