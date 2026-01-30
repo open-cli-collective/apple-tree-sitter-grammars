@@ -128,12 +128,11 @@ Release versions follow the pattern: `v{MAJOR}.{MINOR}.{PATCH}`
 
 | Change Type | Action | Example |
 |-------------|--------|---------|
-| New grammar | No change | `feat: add rust grammar` → `v1.0.43` |
-| Bug fix | No change | `fix: correct python queries` → `v1.0.44` |
-| Minor improvement | Bump MINOR | `1.0` → `1.1` |
+| New grammar | Bump MINOR | `feat: add rust grammar` → `1.0` → `1.1` |
+| Bug fix | No change | `fix: correct python queries` → `v1.1.44` |
 | Breaking change | Bump MAJOR | `1.1` → `2.0` |
 
-The PATCH version auto-increments via `GITHUB_RUN_NUMBER`. Only update `version.txt` manually when bumping MAJOR or MINOR.
+The PATCH version auto-increments via `GITHUB_RUN_NUMBER`. Update `version.txt` manually when adding new grammars (bump MINOR) or making breaking changes (bump MAJOR).
 
 ## Commit Convention
 
