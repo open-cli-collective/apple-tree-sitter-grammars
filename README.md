@@ -34,7 +34,7 @@ TSLanguage* (*tree_sitter_javascript)(void) = dlsym(handle, "tree_sitter_javascr
 TSLanguage* lang = tree_sitter_javascript();
 ```
 
-## Supported Languages (43)
+## Supported Languages (44)
 
 | Language | Repo | Version | License | Aliases |
 |----------|------|---------|---------|---------|
@@ -66,6 +66,7 @@ TSLanguage* lang = tree_sitter_javascript();
 | Makefile | tree-sitter-grammars/tree-sitter-make | v1.1.1 | MIT | make |
 | Markdown | tree-sitter-grammars/tree-sitter-markdown | v0.5.2 | MIT | md |
 | OCaml | tree-sitter/tree-sitter-ocaml | v0.24.2 | MIT | ml |
+| Pascal | Isopod/tree-sitter-pascal | v0.10.2 | MIT | pas, delphi |
 | Perl | tree-sitter-perl/tree-sitter-perl | ad74e6db | MIT | pl, pm |
 | PHP | tree-sitter/tree-sitter-php | v0.24.2 | MIT | |
 | Python | tree-sitter/tree-sitter-python | v0.23.6 | MIT | py |
