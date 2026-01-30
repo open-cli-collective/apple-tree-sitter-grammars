@@ -396,6 +396,15 @@
       "license": "MIT",
       "aliases": [],
       "requiresGeneration": true
+    },
+    {
+      "name": "pascal",
+      "displayName": "Pascal",
+      "org": "Isopod",
+      "repo": "tree-sitter-pascal",
+      "version": "v0.10.2",
+      "license": "MIT",
+      "aliases": ["pas", "delphi"]
     }
   ]
 }
