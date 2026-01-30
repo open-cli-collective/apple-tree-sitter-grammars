@@ -96,9 +96,39 @@ Most repos use `v1.0.0` format, but some don't:
 
 Always verify the actual tag format on GitHub before adding a grammar.
 
-### Repos Without Generated Parser
-Some repos don't include `parser.c` in releases - you need to generate it with `tree-sitter generate`. Look for tags with `-with-generated-files` suffix:
-- alex-pinkus/tree-sitter-swift provides separate tags with pre-generated files
+### Grammars Requiring Generation
+Some repos don't include `parser.c` - it must be generated from `grammar.js` using `tree-sitter generate`. Two approaches:
+
+**Option 1: Use tags with pre-generated files**
+- alex-pinkus/tree-sitter-swift provides `-with-generated-files` tags
+
+**Option 2: Use `requiresGeneration` flag**
+For grammars without pre-generated releases, add the flag to grammars.json:
+```json
+{
+  "name": "perl",
+  "org": "tree-sitter-perl",
+  "repo": "tree-sitter-perl",
+  "version": "ad74e6db234c",  // Commit SHA (no releases)
+  "license": "MIT",
+  "aliases": ["pl", "pm"],
+  "requiresGeneration": true
+}
+```
+
+When `requiresGeneration: true`:
+1. Build script runs `npm install` to get tree-sitter-cli
+2. Runs `npx tree-sitter generate` to create `src/parser.c`
+3. Then proceeds with normal compilation
+
+**Requirements for generation:**
+- Node.js 20+ (CI has this pre-installed)
+- Grammar must have `grammar.js` at root (or in subpath)
+- Grammar's package.json must list `tree-sitter-cli` as dependency
+
+**When to use commit SHA vs tag:**
+- Use commit SHA when repo has no releases (e.g., tree-sitter-perl)
+- Use tag when available, preferring `-with-generated-files` variants
 
 ### Missing Highlight Queries
 Some grammars don't have highlight queries:
