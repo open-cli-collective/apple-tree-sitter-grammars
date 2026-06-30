@@ -1,0 +1,15 @@
+name: macos-dylib-release
+description: Reviews macOS universal tree-sitter dylib release changes for SwiftMarkdown.
+model_tier: small
+effort: low
+file_globs:
+  - grammars.json
+  - version.txt
+  - README.md
+  - CLAUDE.md
+  - scripts/**
+  - .github/workflows/**
+  - .codereview/**
+applies_when:
+  - Changes affect grammar release metadata, packaging scripts, release automation, or documentation that can impact macOS universal dylib artifacts for SwiftMarkdown.
+needs_full_file_content: false
