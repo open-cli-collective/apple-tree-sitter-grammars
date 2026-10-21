@@ -43,7 +43,7 @@ jobs:
       - name: Setup Node.js (for grammars requiring generation)
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22.23.4'
 
       - name: Install dependencies
         run: |
